@@ -7,7 +7,7 @@ import './Login.css'
 
 const Login = () => {
 
-    const handleSubmit = value => console.log(values)
+    const handleSubmit = values => console.log(values)
     const validations = yup.object().shape({
         email: yup.string().email().required(),
         password: yup.string().min(8).required()
