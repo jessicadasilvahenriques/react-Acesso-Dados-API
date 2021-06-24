@@ -1,11 +1,13 @@
-import React from 'react'
-import Routes from '../components/Routes'
+import React from 'react';
+import Navbar from "./components/navbar/Navbar";
+import Routes from '../components/Routes';
 
-import './App.css'
+import './App.css';
 
 const App = () => (
 
     <main className="App">
+        <Navbar/>
         <Routes/>
     </main>
 )
