@@ -21,22 +21,31 @@ class App extends React.Component {
   state = {
     // o sinal de atribuição é conseguido à custa do símbolo :
     // alunos: [...] <=> alunos = [...]
-    alunos: [
+    receitas: [
       {
         nome: "João",
-        apelido: "Lopes"
+        ingredientes: "Lopes",
+        modoPreparo: "Lopes",
+        fotografia: "Lopes"
+        
       },
       {
         nome: "Luísa",
-        apelido: "Matos"
+        ingredientes: "Matos",
+        modoPreparo: "Lopes",
+        fotografia: "Lopes"
       },
       {
         nome: "Mário",
-        apelido: "Santos"
+        ingredientes: "Santos",
+        modoPreparo: "Lopes",
+        fotografia: "Lopes"
       },
       {
         nome: "Ana",
-        apelido: "Silva"
+        ingredientes: "Silva",
+        modoPreparo: "Lopes",
+        fotografia: "../public/images/luisa.jpg"
       }
     ]
   }
@@ -49,13 +58,13 @@ class App extends React.Component {
    */
   removeAluno = (index) => {
     // recuperar os alunos que estão representados na tabela
-    const { alunos } = this.state
+    const { receitas } = this.state
 
     // alterar essa lista, retirando dela o aluno identificado pelo 'index'
     this.setState({
       // filter é um método do 'state' que permite aplicar um filtro sobre os 
       // dados do state
-      alunos: alunos.filter((aluno, i) => {
+      receitas: receitas.filter((receitas, i) => {
         // devolve todos os dados que não forem iguais ao index
         return i !== index
       })
@@ -64,12 +73,12 @@ class App extends React.Component {
 
   /**
    * Adiciona os dados do novo aluno ao 'state'
-   * @param {*} novoAluno - dados do novo aluno, 
+   * @param {*} novaReceita - dados do novo aluno, 
    *                        recebidos do Formulário
    */
-  adicionaAluno = (novoAluno) => {
+  adicionaAluno = (novaReceita) => {
     this.setState({
-      alunos: [...this.state.alunos, novoAluno] 
+        receitas: [...this.state.receitas, novaReceita] 
       // ... é um operador que junta a um array, um novo elemento
     });
   }
@@ -79,26 +88,26 @@ class App extends React.Component {
   // um método chamado 'render'
   render() {
     // definir o acesso à variável com os dados dos alunos
-    const { alunos } = this.state
+    const { receitas } = this.state
 
     // todo o componente tem obrigatoriamente de 'devolver' alguma coisa
     return (
       <div className="container" > {/* e apenas consegue devolver um ÚNICO objeto */}
-        <h1>Processar os dados dos alunos...</h1>
-        <h4>Adicionar aluno</h4>
+        <h1>Receitas Vegan</h1>
+        <h4>Adicionar receita</h4>
         {/* este Formulário irá receber os dados de um novo aluno */}
         {/* o parâmetro 'dadosRecolhidos' é um parâmetro de 'saída'.
             I.e., serve para retirar do 'Formulário' os dados que foram lá recolhidos */}
         <Formulario dadosRecolhidos={this.adicionaAluno} />
         <br />
-        <h4>Lista com dados de alunos</h4>
+        <h4>Lista de receitas</h4>
         <br />
         {/* 'dadosAlunos' é uma variável de entrada no componente
               Naturalmente, do lado do componente existirá um parâmetro para receber estes dados */}
         {/*  {alunos} - 'alunos' será o nome dos dados
                         está escrita entre chavetas {} pq é a forma de se aceder ao
                         conteúdo de variáveis, dentro do JSX */}
-        <Tabela dadosAlunos={alunos} aluno={this.removeAluno} />
+        <Tabela dadosAlunos={receitas} aluno={this.removeAluno} />
         <br />
       </div >
     );

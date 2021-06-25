@@ -9,8 +9,9 @@ function CabecalhoTabela() {
         <thead>
             <tr>
                 <th>Nome</th>
-                <th>Apelido</th>
-                <th></th>
+                <th>Ingredientes</th>
+                <th>Modo de Preparo</th>
+                <th>Fotografia</th>
             </tr>
         </thead>
     )
@@ -25,12 +26,14 @@ const CorpoTabela = (props) => {
         return (
             <tr key={index}>
                 <td>{row.nome}</td>
-                <td>{row.apelido}</td>
+                <td>{row.ingredientes}</td>
+                <td>{row.modoPreparo}</td>
+                <td>{row.fotografia}</td>
                 <td>
                     <button className="btn btn-outline-danger"
                             onClick={()=>props.alunoAremover(index)}
                     >
-                        Apagar aluno
+                        Apagar Receita
                     </button>
                 </td>
             </tr>

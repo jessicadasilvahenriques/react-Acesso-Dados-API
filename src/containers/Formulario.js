@@ -9,13 +9,15 @@ import React from 'react'
 class Formulario extends React.Component {
 
     // criar objeto que irá receber os dados do novo aluno
-    novoAluno = {
+    novaReceita = {
         nome: "",
-        apelido: "",
+        ingredientes: "",
+        modoPreparo: "",
+        fotografia: "",
     }
 
     // adicionar este novo objeto ao 'state'
-    state = this.novoAluno;
+    state = this.novaReceita;
 
     /**
      * handler para manipular os dados escritos pelo
@@ -41,11 +43,11 @@ class Formulario extends React.Component {
     submitForm = () => {
         // atribuir ao parâmetro de 'saída'-dadosRecolhidos- o conteúdo do state
         this.props.dadosRecolhidos(this.state);      
-        this.setState(this.novoAluno);
+        this.setState(this.novaReceita);
     }
 
     render() {
-        const { nome, apelido } = this.state;
+        const { nome, ingredientes, modoPreparo} = this.state;
 
         return (
             // o 'return' só consegue devolver UM objeto
@@ -56,11 +58,22 @@ class Formulario extends React.Component {
                     value={nome}
                     onChange={this.handlerAdicao}
                 /><br />
-                Apelido: <input type="text"
+                Ingredientes: <input type="text"
                     className="form-control"
-                    name="apelido"
-                    value={apelido}
+                    name="ingredientes"
+                    value={ingredientes}
                     onChange={this.handlerAdicao}
+                /><br />
+                Modo de Preparo: <input type="text"
+                    className="form-control"
+                    name="modoPreparo"
+                    value={modoPreparo}
+                    onChange={this.handlerAdicao}
+                /><br />
+                Fotografia: <input type="file"
+                     accept=".jpg,.png"
+                     className="form-control"
+                     onChange={this.handlerFotoChange} 
                 /><br />
                 <input type="button"
                     className="btn btn-primary"
