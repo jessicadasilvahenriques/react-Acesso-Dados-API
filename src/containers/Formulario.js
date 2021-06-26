@@ -47,7 +47,7 @@ class Formulario extends React.Component {
     }
 
     render() {
-        const { nome, ingredientes, modoPreparo} = this.state;
+        const { nome, ingredientes, modoPreparo, fotografia} = this.state;
 
         return (
             // o 'return' só consegue devolver UM objeto
