@@ -4,9 +4,11 @@
 
 // importar da pasta 'node_modules' a package do React 
 import React from 'react';
+
 // importar os componentes 'Tabela' e 'Formulario'
 import Tabela from './Tabela'
 import Formulario from './Formulario'
+
 // importar o CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -56,7 +58,7 @@ class App extends React.Component {
    * método que sabe identificar o 'aluno' que deverá ser retirado da tabela
    * @param {*} index - dados do aluno a remover
    */
-  removeAluno = (index) => {
+  removeReceita = (index) => {
     // recuperar os alunos que estão representados na tabela
     const { receitas } = this.state
 
@@ -93,13 +95,14 @@ class App extends React.Component {
     // todo o componente tem obrigatoriamente de 'devolver' alguma coisa
     return (
       <div className="container" > {/* e apenas consegue devolver um ÚNICO objeto */}
-        <h1>Receitas Vegan</h1>
+        <h1>RECEITAS</h1>
         <h4>Adicionar receita</h4>
         {/* este Formulário irá receber os dados de um novo aluno */}
         {/* o parâmetro 'dadosRecolhidos' é um parâmetro de 'saída'.
             I.e., serve para retirar do 'Formulário' os dados que foram lá recolhidos */}
         <Formulario dadosRecolhidos={this.adicionaAluno} />
         <br />
+        
         <h4>Lista de receitas</h4>
         <br />
         {/* 'dadosAlunos' é uma variável de entrada no componente
@@ -107,7 +110,7 @@ class App extends React.Component {
         {/*  {alunos} - 'alunos' será o nome dos dados
                         está escrita entre chavetas {} pq é a forma de se aceder ao
                         conteúdo de variáveis, dentro do JSX */}
-        <Tabela dadosAlunos={receitas} aluno={this.removeAluno} />
+        <Tabela dadosAlunos={receitas} aluno={this.removeReceita} />
         <br />
       </div >
     );
