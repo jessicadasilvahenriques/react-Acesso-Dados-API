@@ -1,6 +1,18 @@
-const MenuItems = [
+export const MenuItems = [
     {
-        title: 'Home',
+        title: 'Página Inicial',
+        url: '#',
+        cName: 'nav-links',
+
+    },
+    {
+        title: 'Adicionar Receita',
+        url: '#',
+        cName: 'nav-links',
+
+    },
+    {
+        title: 'Lista de receitas',
         url: '#',
         cName: 'nav-links',
 
@@ -11,5 +23,6 @@ const MenuItems = [
         cName: 'nav-links',
 
     }
+ 
  
 ]
