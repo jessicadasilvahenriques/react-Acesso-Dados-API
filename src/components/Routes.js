@@ -1,25 +1,31 @@
 import React from 'react'
 
-import {Router, Switch, Route} from 'react-router'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
-import Login from '../pages/login'
-import Register from '../pages/register'
-import Home from '../pages/home'
-import NotFound from './NotFound'
+import Navbar from './navbar/Navbar'
 
-import {history} from '../history'
+import Login from '../pages/Login'
+import Home from '../pages/Home'
+/* import NotFound from './NotFound' */
+import Adicionar from '../pages/Adicionar'
+import Lista from '../pages/Lista'
 
-const Routes = () => (
+/* import {history} from '../history' */
 
-    <Router history={history}>
+const Routes = () => {
+    return (
+    <Router /* history={history} */>
+        <Navbar />
         <Switch>
-            <Route component={Login} exact path="/login"/>
-            <Route component={Register} exact path="/register"/>
-            <Route component={Home} exact path="/"/>
-            <Route component={NotFound}/>
+            <Route path="/" exact component={Home} />
+            <Route path="/login"  component={Login}/>
+            <Route path="/adicionar"  component={Adicionar}/>
+            <Route path="/lista"  component={Lista}/>
+
         </Switch>
 
     </Router>
-)
+    );
+}
 
 export default Routes

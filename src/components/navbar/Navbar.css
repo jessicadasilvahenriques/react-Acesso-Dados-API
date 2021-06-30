@@ -1,54 +1,53 @@
-.NavbarItems {
-    background: green;
-    height: 80px;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration-style: none;
+}
+
+nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    min-height: 10vh;
     align-items: center;
-    font-size: 1.2rem;
+    background: #006600;
+    color:white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.navbar-logo {
-    color: #fff;
-    justify-self: start;
-    margin-left: 20px;
-    cursor: pointer;
-}
-
-.fa-react {
-    margin-left: 0.5rem;
-    font-size: 1.6rem;
-}
-
-.nav-menu {
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    grid-gap: 10px;
-    list-style: none;
-    text-align: center;
-    width: 70vw;
-    justify-content: end;
-    margin-top: 2rem;
+.logo { 
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;    
 }
 
 .nav-links {
-    color: white;
-    text-decoration:  none;
-    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
 
 }
 
-.nav-links:hover {
-   
-    border-radius: 4px;
-    transition: all 0.2s ease-out;
-}
-
-.nav-links-mobile {
-    display:none;
-
-}
-
-.menu-icon {
-    display: none;
+.nav-links a {
+    font-size: 18px;
+    font-weight: normal;
+    cursor: pointer;
     
+  }
+
+
+
+@media all and (max-width: 768px) {
+    body {
+        display: none;
+    }
 }

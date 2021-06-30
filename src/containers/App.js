@@ -6,8 +6,9 @@
 import React from 'react';
 
 // importar os componentes 'Tabela' e 'Formulario'
-import Tabela from './Tabela'
-import Formulario from './Formulario'
+/* import Tabela from './Tabela'
+import Formulario from './Formulario' */
+import Routes from '../components/Routes';
 
 // importar o CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -70,27 +71,28 @@ class App extends React.Component {
     }
   }
   render(){
-    const{receitas} = this.state;
-    return (
-      <div className="container">
-        <h1>RECEITAS</h1>
-        <h4>Adicionar receita</h4>
-        {/* este Formulário irá receber os dados de um novo aluno */}
-        {/* o parâmetro 'dadosRecolhidos' é um parâmetro de 'saída'.
-            I.e., serve para retirar do 'Formulário' os dados que foram lá recolhidos */}
-        <Formulario dadosDasReceitas={this.adicionaAluno} />
-        <br />
+/*     const{receitas} = this.state;
+ */    return (
+      <Routes />
+      //<div className="container">
+      // <h1>RECEITAS</h1>
+      //  <h4>Adicionar receita</h4>
+      //  {/* este Formulário irá receber os dados de um novo aluno */}
+      //  {/* o parâmetro 'dadosRecolhidos' é um parâmetro de 'saída'.
+      //      I.e., serve para retirar do 'Formulário' os dados que foram lá recolhidos */}
+      //  <Formulario dadosDasReceitas={this.adicionaAluno} />
+      //  <br />
         
-        <h4>Lista de receitas</h4>
-        <br />
-        {/* 'dadosAlunos' é uma variável de entrada no componente
-              Naturalmente, do lado do componente existirá um parâmetro para receber estes dados */}
-        {/*  {alunos} - 'alunos' será o nome dos dados
-                        está escrita entre chavetas {} pq é a forma de se aceder ao
-                        conteúdo de variáveis, dentro do JSX */}
-        {/* este componente - Tabela - irá apresentar os dados das 'fotos' no ecrã*/}
-        <Tabela dadosDasReceitas={receitas} />
-      </div>
+      //  <h4>Lista de receitas</h4>
+      //  <br />
+      //  {/* 'dadosAlunos' é uma variável de entrada no componente
+       //       Naturalmente, do lado do componente existirá um parâmetro para receber estes dados */}
+      //  {/*  {alunos} - 'alunos' será o nome dos dados
+       //                 está escrita entre chavetas {} pq é a forma de se aceder ao
+      //                  conteúdo de variáveis, dentro do JSX */}
+//{/* este componente - Tabela - irá apresentar os dados das 'fotos' no ecrã*/}
+   //     <Tabela dadosDasReceitas={receitas} />
+   //   </div>
     )
   }
   
