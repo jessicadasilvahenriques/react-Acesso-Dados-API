@@ -12,47 +12,87 @@ import Formulario from './Formulario'
 // importar o CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
+/**
+ * função que irá ler os dados (receitas) da API
+ */
+async function getReceitas(){
+  //ler os dados da API
+  let resposta=await fetch('/api/ReceitasAPI');
+  
+  if (!resposta.ok){
+    //não foi recido o código 200 do HTTP
+    console.error("Não conseguimos ler os dados da API. Código: " + resposta.status);
+  }
+  return await resposta.json();
+}
 // cria o 'componente' App
 // neste caso é criada uma FUNÇÃO
 class App extends React.Component {
 
-  // esta variável é passível de ser alterado o seu conteúdo
-  // e, essa é uma das características dos STATE
-  // estamos a definir esta variável fora do 'render'
-  state = {
-    // o sinal de atribuição é conseguido à custa do símbolo :
-    // alunos: [...] <=> alunos = [...]
-    receitas: [
-      {
-        nome: "João",
-        ingredientes: "Lopes",
-        modoPreparo: "Lopes",
-        fotografia: "Lopes"
-        
-      },
-      {
-        nome: "Luísa",
-        ingredientes: "Matos",
-        modoPreparo: "Lopes",
-        fotografia: "Lopes"
-      },
-      {
-        nome: "Mário",
-        ingredientes: "Santos",
-        modoPreparo: "Lopes",
-        fotografia: "Lopes"
-      },
-      {
-        nome: "Ana",
-        ingredientes: "Silva",
-        modoPreparo: "Lopes",
-        fotografia: "../public/images/luisa.jpg"
+  /**
+   *Construtor da classe -> tem sempre este nome 
+   * 
+   */
+
+   constructor(props){
+      super(props); // esta é sempre a primeira instrução
+
+      this.state = {
+        /**
+        * array que irá conter os dados das fotos, vindas da API
+        */
+        receitas: []
       }
-    ]
+   }
+
+   /**
+    * Quando o objeto é criado, executa o código aqui escrito
+    * Vamos usá-lo para carregar os dados da API
+    */
+   componentDidMount(){
+     this.LoadReceitas();
+   }
+
+   /***
+    * Carrega as receitas da API e adiciona-as ao array 'receitas'
+    */
+  async LoadReceitas(){
+     /**
+      * Tarefas:
+      * 1- Ler os dados da API
+      * 2- Atualizar os dados na var. state
+      */
+    try{
+      let receitasVindasAPI = await getReceitas();
+      this.setState({receitas: receitasVindasAPI});
+    }catch (error){
+      console.error("Erro na leitura das receitas da API",error)
+    }
   }
-
-
+  render(){
+    const{receitas} = this.state;
+    return (
+      <div className="container">
+        <h1>RECEITAS</h1>
+        <h4>Adicionar receita</h4>
+        {/* este Formulário irá receber os dados de um novo aluno */}
+        {/* o parâmetro 'dadosRecolhidos' é um parâmetro de 'saída'.
+            I.e., serve para retirar do 'Formulário' os dados que foram lá recolhidos */}
+        <Formulario dadosDasReceitas={this.adicionaAluno} />
+        <br />
+        
+        <h4>Lista de receitas</h4>
+        <br />
+        {/* 'dadosAlunos' é uma variável de entrada no componente
+              Naturalmente, do lado do componente existirá um parâmetro para receber estes dados */}
+        {/*  {alunos} - 'alunos' será o nome dos dados
+                        está escrita entre chavetas {} pq é a forma de se aceder ao
+                        conteúdo de variáveis, dentro do JSX */}
+        {/* este componente - Tabela - irá apresentar os dados das 'fotos' no ecrã*/}
+        <Tabela dadosDasReceitas={receitas} />
+      </div>
+    )
+  }
   
   /**
    * método que sabe identificar o 'aluno' que deverá ser retirado da tabela
@@ -83,37 +123,6 @@ class App extends React.Component {
         receitas: [...this.state.receitas, novaReceita] 
       // ... é um operador que junta a um array, um novo elemento
     });
-  }
-
-
-  // todas as classes terão, obrigatoriamente,
-  // um método chamado 'render'
-  render() {
-    // definir o acesso à variável com os dados dos alunos
-    const { receitas } = this.state
-
-    // todo o componente tem obrigatoriamente de 'devolver' alguma coisa
-    return (
-      <div className="container" > {/* e apenas consegue devolver um ÚNICO objeto */}
-        <h1>RECEITAS</h1>
-        <h4>Adicionar receita</h4>
-        {/* este Formulário irá receber os dados de um novo aluno */}
-        {/* o parâmetro 'dadosRecolhidos' é um parâmetro de 'saída'.
-            I.e., serve para retirar do 'Formulário' os dados que foram lá recolhidos */}
-        <Formulario dadosRecolhidos={this.adicionaAluno} />
-        <br />
-        
-        <h4>Lista de receitas</h4>
-        <br />
-        {/* 'dadosAlunos' é uma variável de entrada no componente
-              Naturalmente, do lado do componente existirá um parâmetro para receber estes dados */}
-        {/*  {alunos} - 'alunos' será o nome dos dados
-                        está escrita entre chavetas {} pq é a forma de se aceder ao
-                        conteúdo de variáveis, dentro do JSX */}
-        <Tabela dadosAlunos={receitas} aluno={this.removeReceita} />
-        <br />
-      </div >
-    );
   }
 }
 

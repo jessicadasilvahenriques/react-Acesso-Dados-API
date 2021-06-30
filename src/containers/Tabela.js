@@ -11,7 +11,7 @@ function CabecalhoTabela() {
                 <th>Nome</th>
                 <th>Ingredientes</th>
                 <th>Modo de Preparo</th>
-                <th>Fotografia</th>
+               
             </tr>
         </thead>
     )
@@ -22,16 +22,15 @@ function CabecalhoTabela() {
 const CorpoTabela = (props) => {
     // esta função 'interna' irá ler e processar todos
     // os objetos definidos dentro do array 'dadosRecebidos'
-    const rows = props.dadosRecebidos.map((row, index) => {
+    const rows = props.dadosDasReceitas.map((row, index) => {
         return (
-            <tr key={index}>
-                <td>{row.nome}</td>
+            <tr key={row.iDreceita}>
+                <td>{row.descricao}</td>
                 <td>{row.ingredientes}</td>
                 <td>{row.modoPreparo}</td>
-                <td>{row.fotografia}</td>
                 <td>
                     <button className="btn btn-outline-danger"
-                            onClick={()=>props.alunoAremover(index)}
+                            //onClick={()=>props.receitasAremover(index)}
                     >
                         Apagar Receita
                     </button>
@@ -46,18 +45,19 @@ const CorpoTabela = (props) => {
 
 // componente que junta os dois sub-componentes, formando um novo 'componente'
 class Tabela extends React.Component {
+    
     render() {
-
+        console.log(this.props);
         // estamos a ler os dados que são recebidos pelo componente
         // <=> this.props.dadosAlunos
-        const { dadosAlunos, aluno } = this.props
+        const { dadosDasReceitas} = this.props
 
         return (
             <table className="table table-striped table-success">
                 <CabecalhoTabela />
                 {/* o parâmetro 'dadosRecebidos' irá ajudar ao processamento
                     dos dados que vêm da componente 'mãe' */}
-                <CorpoTabela dadosRecebidos={dadosAlunos} alunoAremover={aluno} />
+                <CorpoTabela dadosDasReceitas={dadosDasReceitas}/>
             </table>
         )
     }
