@@ -10,19 +10,19 @@ function Navbar() {
 
     return (
             <nav>
-                <div className="logo"><img src={logo} width = "250" height = "45" overflow = "hidden"/></div>
+                <div className="logo"><img src={logo} width = "250" height = "45" overflow = "hidden" alt=""/></div>
                 <ul className="nav-links">
                     <Link style={navStyle} to='/'>
-                        <li><a>PÁGINA INICIAL</a></li>
+                        <li>PÁGINA INICIAL</li>
                     </Link>
                     <Link style={navStyle} to='/adicionar'>
-                        <li><a>ADICIONAR RECEITAS</a></li>
+                        <li>ADICIONAR RECEITAS</li>
                     </Link>
                     <Link style={navStyle} to='/lista'>
-                        <li><a>LISTA DE RECEITAS</a></li>
+                        <li>LISTA DE RECEITAS</li>
                     </Link>
                     <Link style={navStyle} to='/login'>
-                        <li><a>LOGIN</a></li>
+                        <li>LOGIN</li>
                     </Link>
                 </ul>
             </nav>
