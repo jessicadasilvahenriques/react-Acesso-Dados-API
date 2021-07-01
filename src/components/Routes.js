@@ -6,7 +6,7 @@ import Navbar from './navbar/Navbar'
 
 import Login from '../pages/Login'
 import Home from '../pages/Home'
-/* import NotFound from './NotFound' */
+import NotFound from '../pages/NotFound' 
 import Adicionar from '../pages/Adicionar'
 import Lista from '../pages/Lista'
 
@@ -18,6 +18,7 @@ const Routes = () => {
         <Navbar />
         <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/notfound" exact component={NotFound} />
             <Route path="/login"  component={Login}/>
             <Route path="/adicionar"  component={Adicionar}/>
             <Route path="/lista"  component={Lista}/>
