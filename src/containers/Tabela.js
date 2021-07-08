@@ -18,10 +18,9 @@ function CabecalhoTabela() {
 }
 
 // definição da função que devolve o Corpo da tabela
-// faz exatamente o mesmo da linha 7
 const CorpoTabela = (props) => {
     // esta função 'interna' irá ler e processar todos
-    // os objetos definidos dentro do array 'dadosRecebidos'
+    // os objetos definidos dentro do array 'dadosDasReceitas'
     var rows
     if (props.dadosDasReceitas) {
         rows = props.dadosDasReceitas.map((row, index) => {
@@ -54,7 +53,7 @@ async function getReceitas() {
     //ler os dados da API
     let resposta = await fetch('api/ReceitasAPI');
     if (!resposta.ok) {
-        //não foi recido o código 200 do HTTP
+        //não foi recebido o código 200 do HTTP
         console.error("Não conseguimos ler os dados da API. Código: " + resposta.status);
     }
     return await resposta.json();
@@ -95,12 +94,11 @@ class Tabela extends React.Component {
     render() {
         const { receitas } = this.state;
         // estamos a ler os dados que são recebidos pelo componente
-        // <=> this.props.dadosAlunos
 
         return (
             <table className="table table-striped table-success">
                 <CabecalhoTabela />
-                {/* o parâmetro 'dadosRecebidos' irá ajudar ao processamento
+                {/* o parâmetro 'dadosDasReceitas' irá ajudar ao processamento
                     dos dados que vêm da componente 'mãe' */}
                 <CorpoTabela dadosDasReceitas={receitas} />
             </table>

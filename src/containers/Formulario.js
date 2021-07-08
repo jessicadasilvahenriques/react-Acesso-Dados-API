@@ -8,7 +8,7 @@ import React from 'react'
 
 class Formulario extends React.Component {
 
-    // criar objeto que irá receber os dados do novo aluno
+    // criar objeto que irá receber os dados da nova receita
     novaReceita = {
         nome: "",
         ingredientes: "",

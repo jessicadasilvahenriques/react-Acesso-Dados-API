@@ -5,9 +5,6 @@
 // importar da pasta 'node_modules' a package do React 
 import React from 'react';
 
-// importar os componentes 'Tabela' e 'Formulario'
-/* import Tabela from './Tabela'
-import Formulario from './Formulario' */
 import Routes from '../components/Routes';
 
 // importar o CSS
@@ -21,7 +18,7 @@ async function getReceitas(){
   let resposta=await fetch('/api/ReceitasAPI');
   
   if (!resposta.ok){
-    //não foi recido o código 200 do HTTP
+    //não foi recebido o código 200 do HTTP
     console.error("Não conseguimos ler os dados da API. Código: " + resposta.status);
   }
   return await resposta.json();
@@ -74,37 +71,18 @@ class App extends React.Component {
 /*     const{receitas} = this.state;
  */    return (
       <Routes />
-      //<div className="container">
-      // <h1>RECEITAS</h1>
-      //  <h4>Adicionar receita</h4>
-      //  {/* este Formulário irá receber os dados de um novo aluno */}
-      //  {/* o parâmetro 'dadosRecolhidos' é um parâmetro de 'saída'.
-      //      I.e., serve para retirar do 'Formulário' os dados que foram lá recolhidos */}
-      //  <Formulario dadosDasReceitas={this.adicionaAluno} />
-      //  <br />
-        
-      //  <h4>Lista de receitas</h4>
-      //  <br />
-      //  {/* 'dadosAlunos' é uma variável de entrada no componente
-       //       Naturalmente, do lado do componente existirá um parâmetro para receber estes dados */}
-      //  {/*  {alunos} - 'alunos' será o nome dos dados
-       //                 está escrita entre chavetas {} pq é a forma de se aceder ao
-      //                  conteúdo de variáveis, dentro do JSX */}
-//{/* este componente - Tabela - irá apresentar os dados das 'fotos' no ecrã*/}
-   //     <Tabela dadosDasReceitas={receitas} />
-   //   </div>
     )
   }
   
   /**
-   * método que sabe identificar o 'aluno' que deverá ser retirado da tabela
-   * @param {*} index - dados do aluno a remover
+   * método que sabe identificar a 'receita' que deverá ser retirada da tabela
+   * @param {*} index - dados da receita a remover
    */
   removeReceita = (index) => {
-    // recuperar os alunos que estão representados na tabela
+    // recuperar as receitas que estão representadas na tabela
     const { receitas } = this.state
 
-    // alterar essa lista, retirando dela o aluno identificado pelo 'index'
+    // alterar essa lista, retirando dela a receita identificada pelo 'index'
     this.setState({
       // filter é um método do 'state' que permite aplicar um filtro sobre os 
       // dados do state
@@ -116,8 +94,8 @@ class App extends React.Component {
   }
 
   /**
-   * Adiciona os dados do novo aluno ao 'state'
-   * @param {*} novaReceita - dados do novo aluno, 
+   * Adiciona os dados da nova receita ao 'state'
+   * @param {*} novaReceita - dados da nova receita, 
    *                        recebidos do Formulário
    */
   adicionaAluno = (novaReceita) => {
