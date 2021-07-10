@@ -1,0 +1,9 @@
+.titulo-lista {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: bold;
+    color: #006600;
+    padding-top: 7.5vh;
+    padding-left: 50vw;
+    transform: translateX(-25%);
+    text-align: center;
+}

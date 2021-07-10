@@ -13,7 +13,9 @@ import App from './containers/App';
 import 'normalize.css'
 // importa o CSS para dentro do projeto
 import './index.css'
-//invocaçao do que deve ser atualizado na interface
 
+
+//invocaçao do que deve ser atualizado na interface
 ReactDOM.render(<App />, document.getElementById('root'))
+
 

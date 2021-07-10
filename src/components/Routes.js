@@ -18,7 +18,7 @@ const Routes = () => {
         <Navbar />
         <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/notfound" exact component={NotFound} />
+            <Route path="/notfound" component={NotFound} />
             <Route path="/login"  component={Login}/>
             <Route path="/adicionar"  component={Adicionar}/>
             <Route path="/lista"  component={Lista}/>

@@ -1,65 +1,13 @@
 
-* {
-
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif; 
-
-    color: white;
-}
-
-li {
-    list-style-type: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-nav {
-    display: flex;
-    justify-content:  space-around;
-    min-height: 10vh;
-    align-items: center;
-    font-family: inter;
-    background-color: green;
-
-}
-
-nav .logo {   
-}
-
-nav .nav-links {
-    display: flex;
-    justify-content: space-around;
-    width: 30%;
-}
-
-nav .nav-links a{
-    font-size: 18px;
-    font-weight: normal;
-}
-
-nav .nav-links a:hover{
-    border-bottom: 1px solid #fff;
-}
-
-@media all and (max-width: 768px) {
-    body {
-        display: none;
-    }
-}
 
 
 
 
 
-
-
-/*.App {
+.App {
     margin: 0 auto;
     width: 480px;
-    font-family: 'Montserrat', sans-serif;
+
+ 
     
-}*/
+}

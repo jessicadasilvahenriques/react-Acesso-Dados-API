@@ -1,5 +1,13 @@
 import React from 'react'
+import Carousel from "../containers/Carousel"
 
-const Home = () => <h1>Página Inicial</h1>
+const Home = () => {     
+    return (
+      
+      <div className="Carousel">
+        <Carousel />
+      </div>
+    );
+};
 
 export default Home

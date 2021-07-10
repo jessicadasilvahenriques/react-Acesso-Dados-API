@@ -1,0 +1,4 @@
+.carousel-inner  {
+    min-width: 100%;
+    height: 200px; /* Altura da imagem dentro do Carousel */
+}

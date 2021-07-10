@@ -6,6 +6,9 @@
 
 import React from 'react'
 
+import '../pages/Adicionar.css'
+
+
 class Formulario extends React.Component {
 
     // criar objeto que irá receber os dados da nova receita
