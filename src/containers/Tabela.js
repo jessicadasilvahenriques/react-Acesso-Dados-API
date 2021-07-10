@@ -104,6 +104,33 @@ class Tabela extends React.Component {
             </table>
         ) 
     }
+
+    removeReceita = (index) => {
+        // recuperar os alunos que estão representados na tabela
+        const { receitas } = this.state
+    
+        // alterar essa lista, retirando dela o aluno identificado pelo 'index'
+        this.setState({
+          // filter é um método do 'state' que permite aplicar um filtro sobre os 
+          // dados do state
+          receitas: receitas.filter((receitas, i) => {
+            // devolve todos os dados que não forem iguais ao index
+            return i !== index
+          })
+        });
+      }
+    
+      /**
+       * Adiciona os dados do novo aluno ao 'state'
+       * @param {*} novaReceita - dados do novo aluno, 
+       *                        recebidos do Formulário
+       */
+      adicionaAluno = (novaReceita) => {
+        this.setState({
+            receitas: [...this.state.receitas, novaReceita] 
+          // ... é um operador que junta a um array, um novo elemento
+        });
+      }
 }
 
 

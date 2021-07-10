@@ -10,6 +10,7 @@ import Routes from '../components/Routes';
 // importar o CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 /**
  * função que irá ler os dados (receitas) da API
  */
@@ -23,54 +24,17 @@ async function getReceitas(){
   }
   return await resposta.json();
 }
+
 // cria o 'componente' App
 // neste caso é criada uma FUNÇÃO
 class App extends React.Component {
 
-  /**
-   *Construtor da classe -> tem sempre este nome 
-   * 
-   */
+  
 
-   constructor(props){
-      super(props); // esta é sempre a primeira instrução
-
-      this.state = {
-        /**
-        * array que irá conter os dados das fotos, vindas da API
-        */
-        receitas: []
-      }
-   }
-
-   /**
-    * Quando o objeto é criado, executa o código aqui escrito
-    * Vamos usá-lo para carregar os dados da API
-    */
-   componentDidMount(){
-     this.LoadReceitas();
-   }
-
-   /***
-    * Carrega as receitas da API e adiciona-as ao array 'receitas'
-    */
-  async LoadReceitas(){
-     /**
-      * Tarefas:
-      * 1- Ler os dados da API
-      * 2- Atualizar os dados na var. state
-      */
-    try{
-      let receitasVindasAPI = await getReceitas();
-      this.setState({receitas: receitasVindasAPI});
-    }catch (error){
-      console.error("Erro na leitura das receitas da API",error)
-    }
-  }
   render(){
-/*     const{receitas} = this.state;
- */    return (
+ return (
       <Routes />
+
     )
   }
   
@@ -104,6 +68,12 @@ class App extends React.Component {
       // ... é um operador que junta a um array, um novo elemento
     });
   }
+
+ 
+    )
+  }
+  
+
 }
 
 // um componente só é acessível se for 'exportado'
