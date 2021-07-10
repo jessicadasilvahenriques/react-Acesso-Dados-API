@@ -102,7 +102,7 @@ class Tabela extends React.Component {
                     dos dados que vêm da componente 'mãe' */}
                 <CorpoTabela dadosDasReceitas={receitas} />
             </table>
-        )
+        ) 
     }
 }
 
