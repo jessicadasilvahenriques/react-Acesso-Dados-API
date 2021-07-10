@@ -8,7 +8,7 @@ import React from 'react'
 
 class Formulario extends React.Component {
 
-    // criar objeto que irá receber os dados do novo aluno
+    // criar objeto que irá receber os dados da nova receita
     novaReceita = {
         nome: "",
         ingredientes: "",
@@ -47,7 +47,7 @@ class Formulario extends React.Component {
     }
 
     render() {
-        const { nome, ingredientes, modoPreparo} = this.state;
+        const { nome, ingredientes, modoPreparo, fotografia} = this.state;
 
         return (
             // o 'return' só consegue devolver UM objeto
