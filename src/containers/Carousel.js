@@ -19,6 +19,7 @@ class DemoCarousel  extends Component {
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
               </Carousel.Caption>
             </Carousel.Item>
+
             <Carousel.Item>
                 <img src = {imagem2}/>
           
