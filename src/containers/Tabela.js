@@ -32,9 +32,14 @@ const CorpoTabela = (props) => {
                     <td>{row.fotografia}</td>
                     <td>
                         <button className="btn btn-outline-danger"
-                            onClick={() => props.receitasAremover(index)}
+                            onClick={() => this.receitasAremover(index)}
                         >
                             Apagar Receita
+                        </button>
+                        <button className="btn btn-outline-success"
+                            onClick={() => props.receitasAremover(index)}
+                        >
+                            Editar Receita
                         </button>
                     </td>
                 </tr>
@@ -100,7 +105,7 @@ class Tabela extends React.Component {
                 <CabecalhoTabela />
                 {/* o parâmetro 'dadosDasReceitas' irá ajudar ao processamento
                     dos dados que vêm da componente 'mãe' */}
-                <CorpoTabela dadosDasReceitas={receitas} />
+                <CorpoTabela dadosDasReceitas={receitas} receitasAremover={receitas} />
             </table>
         ) 
     }
@@ -125,7 +130,7 @@ class Tabela extends React.Component {
        * @param {*} novaReceita - dados do novo aluno, 
        *                        recebidos do Formulário
        */
-      adicionaAluno = (novaReceita) => {
+      adicionaReceita = (novaReceita) => {
         this.setState({
             receitas: [...this.state.receitas, novaReceita] 
           // ... é um operador que junta a um array, um novo elemento
