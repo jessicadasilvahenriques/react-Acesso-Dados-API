@@ -3,7 +3,6 @@ import Carousel from "../containers/Carousel"
 
 const Home = () => {     
     return (
-      
       <div className="Carousel">
         <Carousel />
       </div>

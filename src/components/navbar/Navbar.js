@@ -10,7 +10,7 @@ function Navbar() {
 
     return (
             <nav>
-                <div className="logo"><img src={logo} width = "250" height = "45" overflow = "hidden" alt=""/></div>
+                <div className="logo"><img src={logo} width = "250" height = "45" overflow = "hidden"/></div>
                 <ul className="nav-links">
                     <Link style={navStyle} to='/'>
                         <li>PÁGINA INICIAL</li>

@@ -1,5 +1,4 @@
 
-
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +7,9 @@
 
 li {
     list-style-type: none;
+    font-size: 17px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
 }
 
 a {
@@ -22,12 +24,6 @@ nav {
     background: #006600;
     color:white;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.logo { 
-    font-size: 22px;
-    font-weight: 700;
-    text-transform: uppercase;    
 }
 
 .nav-links {

@@ -1,59 +1,7 @@
-/* .carousel {
-    width: 640px;
-    height: 360px;
+
+h3, p {
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+
 }
 
-.carousel-inner  {
-    min-width: 100%;
-     height: 200px;  Altura da imagem dentro do Carousel 
-     
-    height: 100%;
-    width: 100%;
-}
-
-/*.item {
-    background-size: cover;
-    background-position: 50% 50%;
-    width: 100%;
-    height: 100%;
-}
-
-.item img {
-    visibility: hidden;
-} */
-
-    .carousel {
-        
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-    }
-    
-    .caption {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
-
-    .Item {
-       /*Altura da imagem dentro do Carousel */
-        flex:1;
-        height: null;
-        width: null;
-       
-        /*background-position: 50% 50%;
-        width: 100%;
-        height: 100%;*/
-    }
-    .carouselInner  {
-        min-width: 100%;
-         height: 200px;  /*Altura da imagem dentro do Carousel */
-         
-        height: 100%;
-        width: 100%;
-    }

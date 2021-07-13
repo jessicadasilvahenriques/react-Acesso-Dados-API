@@ -4,7 +4,6 @@ import './Lista.css'
 
 const Lista = () => {     
     return (
-      
       <div className="Lista">
         <div className ="titulo-lista">
           <h3>LISTA DE RECEITAS</h3>
