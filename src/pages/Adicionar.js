@@ -1,7 +1,6 @@
 
 import React from 'react'
 import Formulario from "../containers/Formulario";
-import Carousel from "../containers/Carousel";
 import './Adicionar.css'
 import '../App.css'
 
