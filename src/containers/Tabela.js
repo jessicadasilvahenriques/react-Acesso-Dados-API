@@ -2,17 +2,20 @@
 // ****************************************************** 
 
 import React from 'react'
+import Table from 'react-bootstrap/Table'
 
 // função que devolve o Cabeçalho da tabela
 function CabecalhoTabela() {
     return (
         <thead>
+           
             <tr>
                 <th>Nome</th>
                 <th>Ingredientes</th>
                 <th>Modo de Preparo</th>
                 <th>Fotografias</th>
             </tr>
+           
         </thead>
     )
 }
@@ -25,6 +28,7 @@ const CorpoTabela = (props) => {
     if (props.dadosDasReceitas) {
         rows = props.dadosDasReceitas.map((row, index) => {
             return (
+               
                 <tr key={row.iDreceita}>
                     <td>{row.descricao}</td>
                     <td>{row.ingredientes}</td>
@@ -34,15 +38,16 @@ const CorpoTabela = (props) => {
                         <button className="btn btn-outline-danger"
                             onClick={() => this.receitasAremover(index)}
                         >
-                            Apagar Receita
+                            Apagar
                         </button>
                         <button className="btn btn-outline-success"
                             onClick={() => props.receitasAremover(index)}
                         >
-                            Editar Receita
+                            Editar
                         </button>
                     </td>
                 </tr>
+                
             )
         })
     }

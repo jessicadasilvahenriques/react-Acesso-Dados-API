@@ -10,22 +10,22 @@ import NotFound from '../pages/NotFound'
 import Adicionar from '../pages/Adicionar'
 import Lista from '../pages/Lista'
 
-/* import {history} from '../history' */
 
 const Routes = () => {
     return (
-    <Router /* history={history} */>
-        <Navbar />
-        <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/notfound" component={NotFound} />
-            <Route path="/login"  component={Login}/>
-            <Route path="/adicionar"  component={Adicionar}/>
-            <Route path="/lista"  component={Lista}/>
+            <Router>
+                <Navbar />
+                <Switch>
+                    <Route path="/" exact component={Home} />
+                    <Route path="/notfound" component={NotFound} />
 
-        </Switch>
-
-    </Router>
+                    <div style={{maxWidth:"70rem", margin: "1rem auto"}}>
+                        <Route path="/login"  component={Login}/>
+                        <Route path="/adicionar"  component={Adicionar}/>
+                        <Route path="/lista"  component={Lista}/>
+                    </div>
+                </Switch>
+            </Router>
     );
 }
 

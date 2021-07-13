@@ -15,8 +15,9 @@ const Login = () => {
     return (
 
         <>
-            <h1>Login</h1>
-            <p>bla bla bla</p>
+        <div className="titulo-login">
+            <h3>LOGIN</h3>
+        </div>
             <Formik 
                 initialValues={{}} 
                 onSubmit={handleSubmit} 
@@ -24,6 +25,7 @@ const Login = () => {
 
                 <Form className="Login">
                     <div className="Login-Group">
+                    Email:
                         <Field 
                             name ="email" 
                             className="Login-Field"/>
@@ -32,7 +34,10 @@ const Login = () => {
                             name="email" 
                             className="Login-Error"/>
                     </div>
+
                     <div className="Login-Group">
+                    <br/>
+                    Password:
                         <Field 
                             name ="password" 
                             className="Login-Field"/>

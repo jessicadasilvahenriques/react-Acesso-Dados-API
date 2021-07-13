@@ -6,7 +6,7 @@
 
 import React from 'react'
 
-import '../pages/Adicionar.css'
+
 
 
 class Formulario extends React.Component {
@@ -54,6 +54,7 @@ class Formulario extends React.Component {
 
         return (
             // o 'return' só consegue devolver UM objeto
+            <div className="formulario">
             <form>
                 Nome: <input type="text"
                     className="form-control"
@@ -84,6 +85,7 @@ class Formulario extends React.Component {
                     onClick={this.submitForm}
                 />
             </form>
+            </div>
         )
     }
 }
