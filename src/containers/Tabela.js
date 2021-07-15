@@ -40,7 +40,7 @@ const CorpoTabela = (props) => {
                         >
                             Apagar
                         </button>
-                        <button className="btn btn-outline-success"
+                        <button  className="btn btn-outline-success" 
                             onClick={() => props.receitasAremover(index)}
                         >
                             Editar
@@ -77,7 +77,7 @@ class Tabela extends React.Component {
 
         this.state = {
             /**
-            * array que irá conter os dados das fotos, vindas da API
+            * array que irá conter os dados das receitas, vindas da API
             */
             receitas: []
         }
@@ -116,10 +116,10 @@ class Tabela extends React.Component {
     }
 
     removeReceita = (index) => {
-        // recuperar os alunos que estão representados na tabela
+        // recuperar os receitas que estão representados na tabela
         const { receitas } = this.state
     
-        // alterar essa lista, retirando dela o aluno identificado pelo 'index'
+        // alterar essa lista, retirando dela a receita identificado pelo 'index'
         this.setState({
           // filter é um método do 'state' que permite aplicar um filtro sobre os 
           // dados do state
@@ -131,8 +131,8 @@ class Tabela extends React.Component {
       }
     
       /**
-       * Adiciona os dados do novo aluno ao 'state'
-       * @param {*} novaReceita - dados do novo aluno, 
+       * Adiciona os dados da nova receita ao 'state'
+       * @param {*} novaReceita - dados da nova receita, 
        *                        recebidos do Formulário
        */
       adicionaReceita = (novaReceita) => {

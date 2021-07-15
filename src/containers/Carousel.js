@@ -23,24 +23,24 @@ class DemoCarousel  extends Component {
             <Carousel.Item>
                 <img src = {imagem2} position= "fixed" width="100%" height="100%"/>
               <Carousel.Caption>
-                <h2>Salada de tomate</h2>
-                <p>Com poucos ingredientes se faz uma salada deliciosa e refrescante.</p>
+                <h2>Pizza de cebola, tomate e rúcula</h2>
+                <p>Com poucos ingredientes se faz uma pizza deliciosa e refrescante.</p>
               </Carousel.Caption>
             </Carousel.Item>
 
             <Carousel.Item>
                 <img src = {imagem3}  position= "fixed" width="100%" height="100%"/>
               <Carousel.Caption>
-                <h2>Hambúrguer de Couve Flor</h2>
-                <p>Hambúrgueres de couve flor são sempre uma ótima ideia!</p>
+                <h2>Taco de pimento e milho</h2>
+                <p>Um taco recheado de vários sabores, uma verdadeira tentação!</p>
               </Carousel.Caption>
             </Carousel.Item>
 
             <Carousel.Item>
                 <img src = {imagem4}  position= "fixed" width="100%" height="100%"/>
               <Carousel.Caption>
-                <h2>Mix de batata doce, bróculos, cajus e tofu</h2>
-                <p>Um prato recheado de vários sabores, uma verdadeira tentação!</p>
+                <h2>Bolo de chocolate</h2>
+                <p>Com cacau e bebida vegetal se pode fazer uma bela sobremesa!</p>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
