@@ -130,17 +130,17 @@ class Tabela extends React.Component {
         });
       }
     
-      /**
-       * Adiciona os dados da nova receita ao 'state'
-       * @param {*} novaReceita - dados da nova receita, 
-       *                        recebidos do Formulário
-       */
-      adicionaReceita = (novaReceita) => {
-        this.setState({
-            receitas: [...this.state.receitas, novaReceita] 
-          // ... é um operador que junta a um array, um novo elemento
-        });
-      }
+    //   /**
+    //    * Adiciona os dados da nova receita ao 'state'
+    //    * @param {*} novaReceita - dados da nova receita, 
+    //    *                        recebidos do Formulário
+    //    */
+    //   adicionaReceita = (novaReceita) => {
+    //     this.setState({
+    //         receitas: [...this.state.receitas, novaReceita] 
+    //       // ... é um operador que junta a um array, um novo elemento
+    //     });
+    //   }
 }
 
 
