@@ -74,11 +74,7 @@ class Formulario extends React.Component {
                     value={modoPreparo}
                     onChange={this.handlerAdicao}
                 /><br />
-                Fotografia: <input type="file"
-                     accept=".jpg,.png"
-                     className="form-control"
-                     onChange={this.handlerFotoChange} 
-                /><br />
+               
                 <input type="button"
                     className="btn btn-primary"
                     value="Adicionar"

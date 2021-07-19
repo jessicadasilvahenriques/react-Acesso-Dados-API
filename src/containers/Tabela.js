@@ -13,7 +13,7 @@ function CabecalhoTabela() {
                 <th>Nome</th>
                 <th>Ingredientes</th>
                 <th>Modo de Preparo</th>
-                <th>Fotografias</th>
+                <th></th>
             </tr>
            
         </thead>
@@ -33,7 +33,6 @@ const CorpoTabela = (props) => {
                     <td>{row.descricao}</td>
                     <td>{row.ingredientes}</td>
                     <td>{row.modoPreparo}</td>
-                    <td>{row.fotografia}</td>
                     <td>
                         <button className="btn btn-outline-danger"
                             onClick={() => this.receitasAremover(index)}
@@ -130,18 +129,6 @@ class Tabela extends React.Component {
         });
       }
     
-    //   /**
-    //    * Adiciona os dados da nova receita ao 'state'
-    //    * @param {*} novaReceita - dados da nova receita, 
-    //    *                        recebidos do Formulário
-    //    */
-    //   adicionaReceita = (novaReceita) => {
-    //     this.setState({
-    //         receitas: [...this.state.receitas, novaReceita] 
-    //       // ... é um operador que junta a um array, um novo elemento
-    //     });
-    //   }
 }
-
 
 export default Tabela
