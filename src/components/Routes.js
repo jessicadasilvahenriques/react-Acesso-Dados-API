@@ -4,11 +4,11 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import Navbar from './navbar/Navbar'
 
-import Login from '../pages/Login'
 import Home from '../pages/Home'
-import NotFound from '../pages/NotFound' 
+import About from '../pages/About' 
 import Adicionar from '../pages/Adicionar'
 import Lista from '../pages/Lista'
+import Editar from '../pages/Editar'
 
 
 const Routes = () => {
@@ -17,13 +17,15 @@ const Routes = () => {
                 <Navbar />
                 <Switch>
                     <Route path="/" exact component={Home} />
-                    <Route path="/notfound" component={NotFound} />
+                    
 
                     <div style={{maxWidth:"70rem", margin: "1rem auto"}}>
-                        <Route path="/login"  component={Login}/>
                         <Route path="/adicionar"  component={Adicionar}/>
                         <Route path="/lista"  component={Lista}/>
+                        <Route path="/editar/:id" component={Editar} />
+                        <Route path="/about" component={About} />
                     </div>
+                        
                 </Switch>
             </Router>
     );

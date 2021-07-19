@@ -9,10 +9,10 @@ import React from 'react'
 
 
 
-class Formulario extends React.Component {
+class FormularioEditar extends React.Component {
 
     // criar objeto que irá receber os dados da nova receita
-    novaReceita = {
+    editaReceita = {
         nome: "",
         ingredientes: "",
         modoPreparo: "",
@@ -20,7 +20,7 @@ class Formulario extends React.Component {
     }
 
     // adicionar este novo objeto ao 'state'
-    state = this.novaReceita;
+    state = this.editaReceita;
 
     /**
      * handler para manipular os dados escritos pelo
@@ -43,10 +43,10 @@ class Formulario extends React.Component {
     /**
      * função que irá exportar os dados para fora do Formulário
      */
-    submitForm = () => {
-        // atribuir ao parâmetro de 'saída'-dadosRecolhidos- o conteúdo do state
-        this.props.dadosRecolhidos(this.state);      
-        this.setState(this.novaReceita);
+    submitEditForm = () => {
+        // atribuir ao parâmetro de 'saída'-dadosAtualizados- o conteúdo do state
+       // this.props.dadosAtualizados(this.state);      
+        this.setState(this.editaReceita);
     }
 
     render() {
@@ -54,7 +54,7 @@ class Formulario extends React.Component {
 
         return (
             // o 'return' só consegue devolver UM objeto
-            <div className="formulario">
+            <div className="formularioEditar">
             <form>
                 Nome: <input type="text"
                     className="form-control"
@@ -77,8 +77,8 @@ class Formulario extends React.Component {
                
                 <input type="button"
                     className="btn btn-primary"
-                    value="Adicionar"
-                    onClick={this.submitForm}
+                    value="Editar"
+                    onClick={this.submitEditForm}
                 />
             </form>
             </div>
@@ -86,4 +86,4 @@ class Formulario extends React.Component {
     }
 }
 
-export default Formulario;
+export default FormularioEditar;

@@ -21,8 +21,8 @@ function Navbar() {
                     <Link style={navStyle} to='/lista'>
                         <li>LISTA DE RECEITAS</li>
                     </Link>
-                    <Link style={navStyle} to='/login'>
-                        <li>LOGIN</li>
+                    <Link style={navStyle} to='/about'>
+                        <li>Acerca de</li>
                     </Link>
                 </ul>
             </nav>
