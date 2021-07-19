@@ -22,11 +22,35 @@ function CabecalhoTabela() {
 
 // definição da função que devolve o Corpo da tabela
 const CorpoTabela = (props) => {
+
+    async function removerReceitas(receitas) {
+      
+        let resposta = await fetch("api/ReceitasAPI/" + receitas.iDreceita, {
+          method: "DELETE",
+          body: {id: receitas.iDreceita}
+        });
+    
+        if (!resposta.ok) {
+            // não obtivemos o 'código de erro' HTTP 200
+            console.error(resposta);
+            throw new Error('não foi possível enviar os dados da nova receita. Código= ' + resposta.status);
+        }
+
+        window.location.reload();
+        
+          // devolver os dados a serem usados na componente 
+          return await resposta.json();
+    }
+
+    async function receitasAeditar(receitas) {
+
+    }
+
     // esta função 'interna' irá ler e processar todos
     // os objetos definidos dentro do array 'dadosDasReceitas'
     var rows
     if (props.dadosDasReceitas) {
-        rows = props.dadosDasReceitas.map((row, index) => {
+        rows = props.dadosDasReceitas.map((row) => {
             return (
                
                 <tr key={row.iDreceita}>
@@ -35,12 +59,12 @@ const CorpoTabela = (props) => {
                     <td>{row.modoPreparo}</td>
                     <td>
                         <button className="btn btn-outline-danger"
-                            onClick={() => this.receitasAremover(index)}
+                            onClick={() => removerReceitas(row)}
                         >
                             Apagar
                         </button>
                         <button  className="btn btn-outline-success" 
-                            onClick={() => props.receitasAremover(index)}
+                            onClick={() => receitasAeditar(row)}
                         >
                             Editar
                         </button>
@@ -109,26 +133,12 @@ class Tabela extends React.Component {
                 <CabecalhoTabela />
                 {/* o parâmetro 'dadosDasReceitas' irá ajudar ao processamento
                     dos dados que vêm da componente 'mãe' */}
-                <CorpoTabela dadosDasReceitas={receitas} receitasAremover={receitas} />
+                <CorpoTabela dadosDasReceitas={receitas} removerReceita={receitas} />
             </table>
         ) 
     }
 
-    removeReceita = (index) => {
-        // recuperar os receitas que estão representados na tabela
-        const { receitas } = this.state
-    
-        // alterar essa lista, retirando dela a receita identificado pelo 'index'
-        this.setState({
-          // filter é um método do 'state' que permite aplicar um filtro sobre os 
-          // dados do state
-          receitas: receitas.filter((receitas, i) => {
-            // devolve todos os dados que não forem iguais ao index
-            return i !== index
-          })
-        });
-      }
-    
 }
+
 
 export default Tabela

@@ -31,8 +31,6 @@ async function adicionaReceita(novaReceita) {
   formData.append("Ingredientes", novaReceita.ingredientes);
   formData.append("ModoPreparo", novaReceita.modoPreparo);
   formData.append("AutorFK", 1);
- // formData.append("Fotografia", novaReceita.fotografia);
-  
 
   let resposta = await fetch("api/ReceitasAPI", {
     method: "POST",
