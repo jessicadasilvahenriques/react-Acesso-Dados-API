@@ -2,7 +2,7 @@
 // ****************************************************** 
 
 import React from 'react'
-import Table from 'react-bootstrap/Table'
+
 
 // função que devolve o Cabeçalho da tabela
 function CabecalhoTabela() {
@@ -22,7 +22,7 @@ function CabecalhoTabela() {
 
 // definição da função que devolve o Corpo da tabela
 const CorpoTabela = (props) => {
-
+    //função que remove as receitas
     async function removerReceitas(receitas) {
       
         let resposta = await fetch("api/ReceitasAPI/" + receitas.iDreceita, {
@@ -42,41 +42,6 @@ const CorpoTabela = (props) => {
           return await resposta.json();
     }
 
-    async function receitasAEditar(receitas) {
-        let resposta = await fetch("api/ReceitasAPI/" + receitas.iDreceita, {
-            method: "GET",
-            body: {id: receitas.iDreceita}
-          });
-      
-          if (!resposta.ok) {
-              // não obtivemos o 'código de erro' HTTP 200
-              console.error(resposta);
-              throw new Error('não foi possível enviar os dados da nova receita. Código= ' + resposta.status);
-          }
-  
-          window.location.reload();
-          
-            // devolver os dados a serem usados na componente 
-            return await resposta.json();
-      }
-     async function receitasAlteradas(receitas) {
-        
-        let resposta = await fetch("api/ReceitasAPI", {
-            method: "POST",
-            body: receitas
-          });
-        
-          if (!resposta.ok) {
-            // não obtivemos o 'código de erro' HTTP 200
-            console.error(resposta);
-            throw new Error('não foi possível enviar os dados da nova receita. Código= ' + resposta.status);
-          }
-        
-          // devolver os dados a serem usados na componente 
-          return await resposta.json();
-     
-    }
-
     // esta função 'interna' irá ler e processar todos
     // os objetos definidos dentro do array 'dadosDasReceitas'
     var rows
@@ -94,11 +59,12 @@ const CorpoTabela = (props) => {
                         >
                             Apagar
                         </button>
-                        <button  className="btn btn-outline-success" 
-                            onClick={() => receitasAlteradas(row)}
+                        <a  className="btn btn-outline-success" 
+                            //onClick={() => receitasAEditar(row)}
+                        href ={"/Editar/"+row.iDreceita}
                         >
                             Editar
-                        </button>
+                        </a>
                     </td>
                 </tr>
                 
