@@ -42,8 +42,39 @@ const CorpoTabela = (props) => {
           return await resposta.json();
     }
 
-    async function receitasAeditar(receitas) {
-
+    async function receitasAEditar(receitas) {
+        let resposta = await fetch("api/ReceitasAPI/" + receitas.iDreceita, {
+            method: "GET",
+            body: {id: receitas.iDreceita}
+          });
+      
+          if (!resposta.ok) {
+              // não obtivemos o 'código de erro' HTTP 200
+              console.error(resposta);
+              throw new Error('não foi possível enviar os dados da nova receita. Código= ' + resposta.status);
+          }
+  
+          window.location.reload();
+          
+            // devolver os dados a serem usados na componente 
+            return await resposta.json();
+      }
+     async function receitasAlteradas(receitas) {
+        
+        let resposta = await fetch("api/ReceitasAPI", {
+            method: "POST",
+            body: receitas
+          });
+        
+          if (!resposta.ok) {
+            // não obtivemos o 'código de erro' HTTP 200
+            console.error(resposta);
+            throw new Error('não foi possível enviar os dados da nova receita. Código= ' + resposta.status);
+          }
+        
+          // devolver os dados a serem usados na componente 
+          return await resposta.json();
+     
     }
 
     // esta função 'interna' irá ler e processar todos
@@ -64,7 +95,7 @@ const CorpoTabela = (props) => {
                             Apagar
                         </button>
                         <button  className="btn btn-outline-success" 
-                            onClick={() => receitasAeditar(row)}
+                            onClick={() => receitasAlteradas(row)}
                         >
                             Editar
                         </button>
