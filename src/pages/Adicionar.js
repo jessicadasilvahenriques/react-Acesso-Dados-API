@@ -30,6 +30,7 @@ async function adicionaReceita(novaReceita) {
   formData.append("Descricao", novaReceita.nome);
   formData.append("Ingredientes", novaReceita.ingredientes);
   formData.append("ModoPreparo", novaReceita.modoPreparo);
+  formData.append("AutorFK", 1);
  // formData.append("Fotografia", novaReceita.fotografia);
   
 
